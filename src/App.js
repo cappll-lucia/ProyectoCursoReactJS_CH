@@ -1,20 +1,14 @@
 import './App.css';
+import NavBar from './components/NavBar';
 
 function App() {
-let nroClase=3;
 
   return (
-    <div className="App">
-      {/*comentatio*/}
-      <p style={
-        {
-          color:"salmon",
-          fontWeight: '800',
-          fontSize: '3rem',
-        }
-      }>Hola numero {nroClase}</p>
-      <input placeholder='ingrese su nombre'/>
-    </div>
+    <>
+      <NavBar/>
+      <div className="App">
+      </div>
+    </>
   );
 }
 
