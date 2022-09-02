@@ -1,0 +1,11 @@
+@import '../../Vars.scss';
+
+.ILC{
+    height: 95vh;
+    background-image: url(../../../gallery/3160622.jpg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $sombra;
+    font-size: 1.5rem;
+}

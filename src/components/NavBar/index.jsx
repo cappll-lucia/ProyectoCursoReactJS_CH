@@ -1,12 +1,15 @@
 import React from 'react'
-import './styles.css'
+import CartWidget from '../CartWidget'
+import './styles.scss'
 
-const NavBar = () => {
+const NavBar = ({categories}) => {
   return (
     <div className="topnav " id="myTopnav">
-            <a href="#">PRODUCTOS</a>
-            <a href="#">TUS ELEGIDOS</a>
-            <a href="#">CONTACTO</a>
+      <a href="#">{categories[0]}</a>
+      <a href="#">{categories[1]}</a>
+      <a href="#">{categories[2]}</a>
+      <a href="#">{categories[3]}</a>
+      <CartWidget quantity={0}/>
     </div>
   )
 }
