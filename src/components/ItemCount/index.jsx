@@ -1,25 +1,27 @@
+import React from 'react';
+import {useState} from 'react';
+import './styles.scss';
 
-import {UseState} from 'react';
-
-
-const [count, SetCount]=UseState(0);
-
-const handleAdd=()=>{
-    SetCount(count+1);
-}
-
-const handleRest=()=>{
-    SetCount(count-1);
-}
 
 
 const ItemCount = () => {
+
+    const [count, SetCount]=useState(0);
+
+    const handleAdd=()=>{
+        SetCount(count+1);
+    }
+
+    const handleRest=()=>{
+        SetCount(count-1);
+    }
+
   return (
     <div id='itemCount'>
         <h3>{count}</h3>
         <div>
-            <button id='btn+' onClick={handleAdd}>+</button>
-            <button id='btn-' onClick={handleRest}>-</button>
+            <button className='btnItemCount' onClick={handleRest}>-</button>
+            <button className='btnItemCount' onClick={handleAdd}>+</button>
         </div>
     </div>
     )

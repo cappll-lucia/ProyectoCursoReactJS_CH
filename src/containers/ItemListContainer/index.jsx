@@ -1,6 +1,6 @@
-import React from 'react'
-import ItemCount from '../../components/ItemCount'
-import './styles.scss'
+import React from 'react';
+import ItemCount from '../../components/ItemCount';
+import './styles.scss';
 
 const ItemListContainer = () => {
   return (

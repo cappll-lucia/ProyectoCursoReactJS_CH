@@ -1,6 +1,6 @@
-import React from 'react'
-import CartWidget from '../CartWidget'
-import './styles.scss'
+import React from 'react';
+import CartWidget from '../CartWidget';
+import './styles.scss';
 
 const NavBar = ({categories}) => {
   return (

@@ -1,0 +1,38 @@
+@import '../../Vars.scss';
+
+#itemCount{
+    background-color:#fff;
+    height: 5.8rem;
+    width: 10rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.5rem;
+    h3{
+        padding: 0.3rem 40%;
+        margin-bottom: 0.2rem;
+        background-color: rgb(236, 247, 250);
+        border: solid #069DBF 2px;
+        border-radius: 0.5rem;
+    }
+    div{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        .btnItemCount{
+            background-color:#fff;
+            border: solid #069DBF 2px;
+            border-radius: 0.3rem;
+            color: $sombra;
+            font-size: 1.5rem;
+            padding: 0.1rem 1.8rem;
+            margin: 0 0.1rem;
+        }
+        .btnItemCount:hover{
+            background-color: #069DBF;
+            transform: scale(1.05);
+        }
+    }
+}
