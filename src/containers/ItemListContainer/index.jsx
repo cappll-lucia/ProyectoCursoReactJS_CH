@@ -14,10 +14,14 @@ const ItemListContainer = () => {
   useEffect(()=>{
     (async()=>{
       const getProducts = new Promise((accept, reject)=>{
-        accept(products);
+        setTimeout(() => {
+          accept(products)
+          console.log(accept);
+        }, 2000);
       })
 
       try {
+        const products = await getProducts;
         setProducsState(products);
       } catch (error) {
         console.log(error);
