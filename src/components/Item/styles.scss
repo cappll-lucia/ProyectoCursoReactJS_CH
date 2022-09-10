@@ -1,0 +1,56 @@
+@import '../../Vars.scss';
+
+
+.product--card{
+    display: block;
+    box-shadow: rgb(81, 114, 81) 0.5px 0.5px 8px;
+    margin: 1rem;
+    text-align: left;
+    border-radius: 10px;
+    height: 25rem;
+    background-color: aliceblue;
+    // box-shadow: rgb(211, 212, 211) 0.5px 0.5px 5px;
+    .card-body{
+        padding: 1rem;
+        color: $sombra;
+        .card-title{
+            padding: 0;
+            margin-top: 1rem;
+            font-size: 2.4rem;
+        }
+        .card-text{
+            padding: 0;
+            margin-bottom: 0px;
+            margin: 0;
+        }
+        .brand{
+            font-size: 2rem;
+        }
+        .model{
+            color: #64618b;
+            font-size: 1rem;
+        }
+        .card-btn{
+            padding: 0.7rem 1rem;
+            font-family: 'Poppins', sans-serif;
+            color: $sombra;
+            font-weight: 600;
+            font-size: 1rem;
+            position: absolute;
+            bottom: 0;
+            margin: 0 0 1rem 1rem;
+            border-radius: 15px;
+            background-image: linear-gradient(to bottom, #8af5f5 5%, #7cd4b2 95%);
+            border: none;
+            i{
+                margin-left: 18px;
+                padding: 0;
+                font-size: 18px;
+                color: $sombra;
+            }
+        }
+        .card-btn:hover{
+            transform: scale(1.1);
+        }
+    }
+}

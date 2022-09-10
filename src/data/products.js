@@ -5,7 +5,7 @@ export const products =[
         description:"sqr_black",
         price:20000,
         stock:3,
-        img:"/gallery/card_recetados.jpg",
+        img:"../../gallery/card_recetados.jpg",
         category:"prodeojo Recetado"
     },
     {   

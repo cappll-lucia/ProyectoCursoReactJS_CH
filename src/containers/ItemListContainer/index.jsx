@@ -28,7 +28,7 @@ const ItemListContainer = () => {
   
   return (
     
-    <div className='ILC'>
+    <div className='ILC container-fluid'>
         {/* <h1>SitioWeb en construcción...</h1> */}
         {/* <ItemCount/> */}
 
