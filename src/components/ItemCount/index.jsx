@@ -18,9 +18,9 @@ const ItemCount = () => {
 
   return (
     <div id='itemCount'>
-        <h3>{count}</h3>
+        <div className='itemCountCant' >{count}</div>
         <div>
-            <button className='btnItemCount' onClick={handleRest}>-</button>
+            <button className='btnItemCount btnItemCountAdd' onClick={handleRest}>-</button>
             <button className='btnItemCount' onClick={handleAdd}>+</button>
         </div>
     </div>
