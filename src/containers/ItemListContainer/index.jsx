@@ -8,9 +8,9 @@ import ItemList from '../../components/ItemList';
 
 const ItemListContainer = () => {
   
-  const [productsState, setProducsState]=useState([]);
+  const [products, setProducs]=useState([]);
 
-
+/* --Trajendo los productosd dese Data.json
   useEffect(()=>{
     (async()=>{
       const getProducts = new Promise((accept, reject)=>{
@@ -20,14 +20,31 @@ const ItemListContainer = () => {
         }, 2000);
       })
 
-      try {
+    try {
         const products = await getProducts;
         setProducsState(products);
       } catch (error) {
         console.log(error);
       }
     })();
-  })
+  }, [])
+  */
+
+  /* Trayendo los productos desde FakeStoreAPI */
+  useEffect (()=>{
+    const getProducts  =async()=>{
+      try {
+        const response = await fetch("https://fakestoreapi.com/products");
+        const data = await response.json();
+        setProducs(data);
+      } catch (error) {
+        console.log(error);
+      }
+    }
+    
+  getProducts();
+  console.log(products)
+  }, []);
   
   
   return (
