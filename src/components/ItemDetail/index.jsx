@@ -27,7 +27,7 @@ const ItemDetail = ({product}) => {
           <h3 className='ItemDetailTitle'>{product.title}</h3>
           <span className='ItemDetailDesc'>${product.description}</span>
           <span className='ItemDetailPrice'>$ {product.price}</span>
-          { !qty ? <ItemCount stock={5} initial={1} onAdd={addCart}/> : <button onClick={onHandleFinish}>Finalizar compra</button>}
+          { qty ? <button onClick={onHandleFinish}>Finalizar compra</button> :<ItemCount stock={5} initial={1} onAdd={addCart}/> }
         </div> 
       </div>
     </div>
