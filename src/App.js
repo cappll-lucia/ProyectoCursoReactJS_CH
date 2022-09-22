@@ -3,13 +3,18 @@ import './App.scss';
 import NavBar from './components/NavBar';
 import ItemDetailContainer from './containers/ItemDetailContainer';
 import ItemListContainer from './containers/ItemListContainer';
+import{
+  BrowserRouter,
+  Routes,
+  Route
+}from 'react-router-dom'
+import NotFound from './components/NotFound';
 
 function App() {
 
   const [categories, setCategories]= useState([]);
 
   useEffect(()=>{
-
     const getCategories = async()=>{
       try {
         const response = await fetch("https://fakestoreapi.com/products/categories/");
@@ -25,11 +30,15 @@ function App() {
   })
 
   return (
-    <div>
+    <BrowserRouter>
       <NavBar categories={categories} />
-      {/* <ItemListContainer/> */}
-      <ItemDetailContainer/>
-    </div>
+      <Routes>
+        <Route path='/' element={<ItemListContainer/>}/>
+        <Route path='/category/:categoryID' element={<ItemListContainer/>}/>
+        <Route path='/detail/:productID' element={<ItemDetailContainer/>}/>
+        <Route path='*' element={<NotFound/>}/>
+      </Routes>
+    </BrowserRouter>
   );
 }
 

@@ -4,11 +4,14 @@ import './styles.scss';
 import { products } from '../../data/products';
 import { useEffect } from 'react';
 import ItemList from '../../components/ItemList';
+import { useParams } from 'react-router-dom';
 
 
 const ItemListContainer = () => {
   
-  const [products, setProducs]=useState([]);
+  const [products, setProducts]=useState([]);
+
+  const {categoryID}=useParams();
 
 /* --Trajendo los productosd dese Data.json
   useEffect(()=>{
@@ -34,17 +37,22 @@ const ItemListContainer = () => {
   useEffect (()=>{
     const getProducts  =async()=>{
       try {
-        const response = await fetch("https://fakestoreapi.com/products");
-        const data = await response.json();
-        setProducs(data);
+        const response = await fetch('https://fakestoreapi.com/products');
+        const prods = await response.json();
+        console.log("PRODS: ",prods);
+        if (categoryID){
+          let categoryProds = prods.filter(prod=> prod.category==categoryID);
+          setProducts(categoryProds);
+        }else{
+          setProducts(prods);
+        }
+        console.log(products);
       } catch (error) {
         console.log(error);
       }
-    }
-    
+  }
   getProducts();
-  console.log(products)
-  }, []);
+  }, [categoryID]);
   
   
   return (

@@ -29,9 +29,10 @@
         width: 40%;
         display: flex;
         justify-content: center;
+        overflow: hidden;
         img{
             height:29rem;
-            width: auto;
+            width: 25rem;
         }   
     }
     .ItemDetailInfo{

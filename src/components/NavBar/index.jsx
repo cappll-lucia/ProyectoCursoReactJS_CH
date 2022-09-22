@@ -1,14 +1,16 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import CartWidget from '../CartWidget';
 import './styles.scss';
 
 const NavBar = ({categories}) => {
   return (
     <div className="topnav " id="myTopnav">
-      <a href="../public/index.html">{categories[0]}</a>
-      <a href="../public/index.html">{categories[1]}</a>
-      <a href="../public/index.html">{categories[2]}</a>
-      <a href="../public/index.html">{categories[3]}</a>
+      <Link to='/'><img src='/public/gallery/logotipoOptica.png'/></Link>
+      <Link to='/category/electronics'>{categories[0]}</Link>
+      <Link to="/category/jewelery">{categories[1]}</Link>
+      <Link to="/category/men's clothing">{categories[2]}</Link>
+      <Link to="/category/women's clothing">{categories[3]}</Link>
       <CartWidget quantity={0}/>
     </div>
   )
