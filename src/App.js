@@ -9,6 +9,7 @@ import{
   Route
 }from 'react-router-dom'
 import NotFound from './components/NotFound';
+import ShopProvider from './context/ShopProvider';
 import CartContainer from './containers/CartContainer';
 
 function App() {
@@ -31,16 +32,18 @@ function App() {
   })
 
   return (
-    <BrowserRouter>
-      <NavBar categories={categories} />
-      <Routes>
-        <Route path='/' element={<ItemListContainer/>}/>
-        <Route path='/category/:categoryID' element={<ItemListContainer/>}/>
-        <Route path='/detail/:productID' element={<ItemDetailContainer/>}/>
-        <Route path='/cart' element={<CartContainer/>}/>
-        <Route path='*' element={<NotFound/>}/>
-      </Routes>
-    </BrowserRouter>
+    <ShopProvider>
+      <BrowserRouter>
+        <NavBar categories={categories} />
+        <Routes>
+          <Route path='/' element={<ItemListContainer/>}/>
+          <Route path='/category/:categoryID' element={<ItemListContainer/>}/>
+          <Route path='/detail/:productID' element={<ItemDetailContainer/>}/>
+          <Route path='/cart' element={<CartContainer/>}/>
+          <Route path='*' element={<NotFound/>}/>
+        </Routes>
+      </BrowserRouter>
+    </ShopProvider>
   );
 }
 

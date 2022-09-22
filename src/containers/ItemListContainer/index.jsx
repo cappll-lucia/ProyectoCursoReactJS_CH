@@ -39,14 +39,12 @@ const ItemListContainer = () => {
       try {
         const response = await fetch('https://fakestoreapi.com/products');
         const prods = await response.json();
-        console.log("PRODS: ",prods);
         if (categoryID){
           let categoryProds = prods.filter(prod=> prod.category==categoryID);
           setProducts(categoryProds);
         }else{
           setProducts(prods);
         }
-        console.log(products);
       } catch (error) {
         console.log(error);
       }
