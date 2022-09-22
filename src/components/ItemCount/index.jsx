@@ -4,16 +4,25 @@ import './styles.scss';
 
 
 
-const ItemCount = () => {
+const ItemCount = ({stock, initial, onAdd}) => {
 
-    const [count, SetCount]=useState(0);
+    const [count, SetCount]=useState(initial);
 
     const handleAdd=()=>{
-        SetCount(count+1);
+        if(count<stock){
+            SetCount(count+1);
+        }else{
+            alert(`Sólo quedan ${stock} unidades disponibles`);
+        }
     }
 
     const handleRest=()=>{
         SetCount(count-1);
+    }
+
+    const addCart=()=>{
+        onAdd(count);
+        SetCount(initial);
     }
 
   return (
@@ -23,6 +32,7 @@ const ItemCount = () => {
             <button className='btnItemCount btnItemCountAdd' onClick={handleRest}>-</button>
             <button className='btnItemCount' onClick={handleAdd}>+</button>
         </div>
+        <button onClick={addCart}>Agregar al carrito</button>
     </div>
     )
 }

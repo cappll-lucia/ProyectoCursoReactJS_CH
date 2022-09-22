@@ -3,7 +3,7 @@
 #itemCount{
     background-color:#fff;
     margin: 0 2rem;
-    height: 4rem;
+    height: max-content;
     width: 10rem;
     display: flex;
     flex-direction: column;
@@ -17,7 +17,7 @@
         padding: 0.3rem 0;
         width: 100%;
         justify-content: center;
-        // margin-bottom: 0.2rem;   
+        margin-bottom: 0.2rem;   
         background-color:none;
         border-bottom: solid #069DBF 2px;
         // border-radius: 0.5rem;

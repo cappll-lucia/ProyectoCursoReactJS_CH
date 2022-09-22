@@ -1,10 +1,23 @@
 import React from 'react';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import ItemCount from '../ItemCount';
 import './styles.scss';
 
 const ItemDetail = ({product}) => {
-  return (
 
+  const [qty, setQty]= useState(0);
+  const navigate=useNavigate();
+
+  const addCart=(quantity)=>{
+    setQty(quantity);
+  }
+
+  const onHandleFinish=()=>{
+    navigate('/cart');
+  }
+
+  return (
     <div className='ItemDetail'>
       <div className="ItemDetailContent">
         <div className="ItemDetailImg">
@@ -14,8 +27,8 @@ const ItemDetail = ({product}) => {
           <h3 className='ItemDetailTitle'>{product.title}</h3>
           <span className='ItemDetailDesc'>${product.description}</span>
           <span className='ItemDetailPrice'>$ {product.price}</span>
-          <ItemCount/>
-        </div>  
+          { !qty ? <ItemCount stock={5} initial={1} onAdd={addCart}/> : <button onClick={onHandleFinish}>Finalizar compra</button>}
+        </div> 
       </div>
     </div>
   )
