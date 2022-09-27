@@ -29,7 +29,7 @@ const ShopProvider = ({children}) => {
     }
 
     const removeItem=(id)=>{
-        const cartModified= cart.filter(product=> product.id!=id);
+        const cartModified= cart.filter(product=> product.id!==id);
         setCart(cartModified);
     }
 
@@ -40,7 +40,7 @@ const ShopProvider = ({children}) => {
     
 
     return (
-        <Shop.Provider value={{cart, addItem}}>
+        <Shop.Provider value={{cart, addItem, removeItem, clearCart}}>
             {children}
         </Shop.Provider>
     )
