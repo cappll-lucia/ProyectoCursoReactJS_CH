@@ -32,7 +32,7 @@ const ItemDetail = ({product}) => {
         </div>
         <div className='ItemDetailInfo'>
           <h3 className='ItemDetailTitle'>{product.title}</h3>
-          <span className='ItemDetailDesc'>${product.description}</span>
+          <span className='ItemDetailDesc'>{product.description}</span>
           <span className='ItemDetailPrice'>$ {product.price}</span>
           { qty ? <button onClick={handleFinish}>Finalizar compra</button> :<ItemCount stock={5} initial={1} onAdd={addCart}/> }
         </div> 

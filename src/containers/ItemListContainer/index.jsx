@@ -15,7 +15,35 @@ const ItemListContainer = () => {
 
   const {categoryID}=useParams();
 
-/* --Trajendo los productosd dese Data.json
+  /*Trayendo los productos desde FireBase*/
+  useEffect (()=>{
+    const getProducts  =async()=>{
+      try {
+        let q ='';
+        if(categoryID){
+          q = query(collection(db, "products"),where("category", "==", categoryID));
+        }else{
+          q = query(collection(db, "products"));
+        }
+        const querySnapshot = await getDocs(q);
+        const firebaseProds=[];
+        querySnapshot.forEach((doc) => {
+          console.log(doc.id, " => ", doc.data());
+          firebaseProds.push({id: doc.id, 
+                              ...doc.data()});
+        });
+        console.log("fbp:",firebaseProds);
+        setProducts(firebaseProds); 
+      } catch (error) {
+        console.log(error);
+      }
+  }
+  getProducts();
+  }, [categoryID]);
+
+
+
+  /* --Trajendo los productosd dese Data.json
   useEffect(()=>{
     (async()=>{
       const getProducts = new Promise((accept, reject)=>{
@@ -55,36 +83,6 @@ const ItemListContainer = () => {
   getProducts();
   }, [categoryID]);
   */
-
-
-  /*Trayendo los productos desde FireBase*/
-  useEffect (()=>{
-    const getProducts  =async()=>{
-      try {
-        let q ='';
-        if(categoryID){
-          q = query(collection(db, "products"), where("category", "==","Sol"));
-        }else{
-          q = query(collection(db, "products"));
-        }
-        const querySnapshot = await getDocs(q);
-        const firebaseProds=[];
-        querySnapshot.forEach((doc) => {
-          console.log(doc.id, " => ", doc.data());
-          firebaseProds.push({id: doc.id, 
-                              ...doc.data()});
-        });
-        setProducts(firebaseProds); 
-      } catch (error) {
-        console.log(error);
-      }
-  }
-  getProducts();
-  console.log("estado", products);
-
-  }, [categoryID]);
-
-
 
 
   
