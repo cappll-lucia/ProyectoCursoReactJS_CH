@@ -1,15 +1,10 @@
+@import '../../Vars.scss';
+
 .cartIcon{
-    font-family: "Poppins", sans-serif;
-    width:5rem;
-    height:auto;
-    display: flex;
-    align-items: center;
-    color: #fff;
-    padding:1rem;
-    font-size: 2rem;
-    margin: 3rem;
-    .quantity{
-        font-size: 1.5rem;
-        padding: 1rem ;
+    color: $blueA;
+    padding: 0.7rem 1rem;
+    border-radius: 5rem;
+    border: solid $blueA 2px;
+    font-size: 1.3rem;
     }
-}
+
