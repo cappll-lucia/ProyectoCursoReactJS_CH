@@ -28,11 +28,9 @@ const ItemListContainer = () => {
         const querySnapshot = await getDocs(q);
         const firebaseProds=[];
         querySnapshot.forEach((doc) => {
-          console.log(doc.id, " => ", doc.data());
           firebaseProds.push({id: doc.id, 
                               ...doc.data()});
         });
-        console.log("fbp:",firebaseProds);
         setProducts(firebaseProds); 
       } catch (error) {
         console.log(error);
