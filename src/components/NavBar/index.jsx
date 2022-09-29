@@ -2,13 +2,21 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import CartWidget from '../CartWidget';
 import './styles.scss';
+import logoImage from './logotipoOptica.png';
+import SearchBar from '../SearchBar';
 
 
 const NavBar = ({categories}) => {
 
   return (
+    <>
+  <div className="topHeader" id="myTopHeader">
+    <SearchBar/>
+    <Link to='/'><img src={logoImage}/></Link>
+    <CartWidget quantity={0}/>
+  </div>
+
     <div className="topnav " id="myTopnav">
-      <Link to='/'><img src="../public/gallery/logotipoOptica.png"/></Link>
       {
         categories.length ?
           categories.map(categ =>{
@@ -16,8 +24,8 @@ const NavBar = ({categories}) => {
           }): 
           <span>Bienvenido a nuestro sitio web!</span>
       }
-      <CartWidget quantity={0}/>
     </div>
+    </>
   )
 }
 
