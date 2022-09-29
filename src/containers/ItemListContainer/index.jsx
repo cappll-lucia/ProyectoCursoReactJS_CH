@@ -5,10 +5,12 @@ import { products } from '../../data/products';
 import { useEffect } from 'react';
 import ItemList from '../../components/ItemList';
 import { useParams } from 'react-router-dom';
+import {db} from '../../firebase/config';
+import { collection, query, where, getDocs } from "firebase/firestore";
 
 
 const ItemListContainer = () => {
-  
+
   const [products, setProducts]=useState([]);
 
   const {categoryID}=useParams();
@@ -34,6 +36,7 @@ const ItemListContainer = () => {
   */
 
   /* Trayendo los productos desde FakeStoreAPI */
+  /*
   useEffect (()=>{
     const getProducts  =async()=>{
       try {
@@ -51,7 +54,39 @@ const ItemListContainer = () => {
   }
   getProducts();
   }, [categoryID]);
-  
+  */
+
+
+  /*Trayendo los productos desde FireBase*/
+  useEffect (()=>{
+    const getProducts  =async()=>{
+      try {
+        let q ='';
+        if(categoryID){
+          q = query(collection(db, "products"), where("category", "==","Sol"));
+        }else{
+          q = query(collection(db, "products"));
+        }
+        const querySnapshot = await getDocs(q);
+        const firebaseProds=[];
+        querySnapshot.forEach((doc) => {
+          console.log(doc.id, " => ", doc.data());
+          firebaseProds.push({id: doc.id, 
+                              ...doc.data()});
+        });
+        setProducts(firebaseProds); 
+      } catch (error) {
+        console.log(error);
+      }
+  }
+  getProducts();
+  console.log("estado", products);
+
+  }, [categoryID]);
+
+
+
+
   
   return (
     

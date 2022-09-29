@@ -11,6 +11,11 @@ import{
 import NotFound from './components/NotFound';
 import ShopProvider from './context/ShopProvider';
 import CartContainer from './containers/CartContainer';
+import { collection, query, where, getDocs } from "firebase/firestore";
+import {db} from './firebase/config';
+
+
+
 
 function App() {
 
@@ -26,8 +31,28 @@ function App() {
         console.log(error);
       }
     }
+/*
+    const getCategories = async()=>{
+      try {
+      const q = query(collection(db, "categories"));
+      const querySnapshot = await getDocs(q);
+      const firebaseCateg=[];
+      querySnapshot.forEach((doc) => {
+        console.log(doc.id, " => ", doc.data());
+        firebaseCateg.push({id: doc.id, 
+                            ...doc.data()});
+      });  
+      setCategories(firebaseCateg);
+      } catch (error) {
+        console.log(error);
+      }
+    }
+
+*/
+
 
     getCategories();
+    // console.log(categories);
 
   })
 
