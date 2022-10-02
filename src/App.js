@@ -36,7 +36,7 @@ function App() {
         firebaseCateg.push({id: doc.id, ...doc.data()});
       });
       setCategories(firebaseCateg);
-    }
+    };
     getCategories();
   })
 
