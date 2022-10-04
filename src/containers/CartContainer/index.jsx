@@ -4,6 +4,8 @@ import {Shop} from '../../context/ShopProvider';
 // import'../../../public/gallery/'
 import './styles.scss';
 import {BsFillTrashFill} from 'react-icons/bs';
+import { Link } from 'react-router-dom';
+
 
 
 const CartContainer = () => {
@@ -44,7 +46,10 @@ console.log( cart);
             )
           }) 
         :
-        <div className='cartIsEmpty'>No hay productos en el carrito!</div>
+        <div className='cartIsEmpty'>
+          <span>No hay productos en el carrito!</span>
+          <Link to='/'><button>Ver productos</button></Link>
+          </div>
         }
       </div>
       <div className="totalCart">

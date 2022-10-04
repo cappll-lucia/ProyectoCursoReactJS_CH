@@ -10,6 +10,12 @@
 
 .clearCartBtn{
     align-self: flex-end;
+    background-color:rgb(139, 134, 134);
+    border: none;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 0.8rem;
+    box-shadow: #969191 2px 2px 5px;
     margin: 3rem 12rem;
 }
 
@@ -119,12 +125,31 @@
     }
 }
 
-.cartIsEmpty{
+.cartIsEmpty{    
     background-color: rgb(243, 76, 76);
-    color: #e9e3e3;
-    font-size: 1.5rem;
     padding: 1rem;
     margin: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 0.8rem;
+    span{
+        color: #e9e3e3;
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+    button{
+        background-color: none;
+        border: none;
+        font-size: 1rem;
+        padding: 0.5rem 1rem;
+        border-radius: 0.8rem;
+        box-shadow: #969191 2px 2px 5px;
+    }
+    button:hover{
+        transform: scale(1.1);
+    }
 }
 
 
