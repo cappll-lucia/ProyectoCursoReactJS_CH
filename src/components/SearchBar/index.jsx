@@ -1,14 +1,11 @@
 import React from 'react';
-import './styles.scss'
+import './styles.scss';
+import {BsSearch} from 'react-icons/bs';
 
 const SearchBar = () => {
 
     const mySearchBar = document.getElementById("mySearchBar");
 
-    const onChange = ()=>{
-        console.log("onChange function");
-        // React.ChangeEventHandler;
-    }
     const cleanPlaceholder =()=>{
         mySearchBar.placeholder="";
     }
@@ -17,15 +14,15 @@ const SearchBar = () => {
     }
 
   return (
-    <div>
-            <input
-      className="SearchBar" id='mySearchBar'
-      type="text"
-    //   onChange={onChange}
-      placeholder="Buscar ..."
-      onFocus={cleanPlaceholder}
-      onBlur={completePlaceholder}
-    />      
+      <div className='SearchBar'>
+        <a href='#' className='SearchBarBtn'><BsSearch/></a>
+        <input
+          className="SearchInput" id='mySearchBar'
+          type="text"
+          placeholder="Buscar ..."
+          onFocus={cleanPlaceholder}
+          onBlur={completePlaceholder}
+        />
     </div>
   )
 }
