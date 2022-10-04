@@ -24,6 +24,7 @@ console.log( cart);
         </div>
 
         {
+          cart.length ?
           cart.map(item =>{
             return(
               <div className="singleCartItem">
@@ -41,7 +42,9 @@ console.log( cart);
                 </div>
             </div>
             )
-          })
+          }) 
+        :
+        <div className='cartIsEmpty'>No hay productos en el carrito!</div>
         }
       </div>
       <div className="totalCart">
