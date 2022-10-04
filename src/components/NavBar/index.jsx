@@ -13,7 +13,7 @@ const NavBar = ({categories}) => {
   <div className="topHeader" id="myTopHeader">
     <SearchBar/>
     <Link to='/'><img src={logoImage}/></Link>
-    <CartWidget quantity={0}/>
+    <Link to='/cart'><CartWidget quantity={0}/></Link>
   </div>
 
     <div className="topnav " id="myTopnav">
