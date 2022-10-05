@@ -85,7 +85,7 @@ const CartContainer = () => {
         }
       </div>
       {
-      loading ? 
+      !loading ? 
       <div className="cartAction">
         <Button variant="outlined" onClick={()=>clearCart()} className='clearCartBtn'>Vaciar Carrito<BsFillTrashFill/></Button>
         <Button variant="contained" onClick={()=>handleSale()} className='FinalizeCartBtn'>Finalizar</Button>
