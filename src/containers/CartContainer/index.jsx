@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import {Shop} from '../../context/ShopProvider';
 // import'../../../public/gallery/'
@@ -11,7 +11,9 @@ import { Link } from 'react-router-dom';
 const CartContainer = () => {
 
   const {cart, removeItem, clearCart} =useContext(Shop);
-console.log( cart);
+
+
+
   return (
     <div className="cartContainer">
       <div className='cart'>

@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import ItemCount from '../../components/ItemCount';
 import './styles.scss';
-import { products } from '../../data/products';
 import { useEffect } from 'react';
 import ItemList from '../../components/ItemList';
 import { useParams } from 'react-router-dom';
@@ -31,6 +30,7 @@ const ItemListContainer = () => {
           firebaseProds.push({id: doc.id, 
                               ...doc.data()});
         });
+        console.log("Productos firebase: ", firebaseProds);
         setProducts(firebaseProds); 
       } catch (error) {
         console.log(error);
