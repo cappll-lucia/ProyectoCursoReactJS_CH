@@ -9,7 +9,6 @@ const automaticalySaveProds =async()=>{
         //     accept(products);});
         const resp = await fetch('/data/products.json');
         const prodsToSave = await resp.json();
-        
         prodsToSave.forEach(async(prod) => {
             const docRef=await addDoc(collection(db, "products"),{
                 codProd: prod.codProd,

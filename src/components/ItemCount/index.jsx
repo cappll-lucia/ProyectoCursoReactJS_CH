@@ -12,7 +12,7 @@ const ItemCount = ({stock, initial, onAdd}) => {
         if(count<stock){
             SetCount(count+1);
         }else{
-            alert(`Sólo quedan ${stock} unidades disponibles`);
+            alert(`Sólo quedan ${stock} unidades disponibles`); //pasarla a swet alert
         }
     }
 

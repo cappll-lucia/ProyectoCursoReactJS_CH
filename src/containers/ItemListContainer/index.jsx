@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import ItemCount from '../../components/ItemCount';
+// import ItemCount from '../../components/ItemCount';
 import './styles.scss';
 import { useEffect } from 'react';
 import ItemList from '../../components/ItemList';

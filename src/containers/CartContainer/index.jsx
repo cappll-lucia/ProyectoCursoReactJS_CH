@@ -1,22 +1,52 @@
-import React, { useContext, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import React, { useContext, useState} from 'react';
+// import { useParams } from 'react-router-dom';
 import {Shop} from '../../context/ShopProvider';
-// import'../../../public/gallery/'
+import { Link } from 'react-router-dom';
+import newOrder from '../../services/newOrder';
+import {db} from '../../firebase/config';
+import {collection, addDoc, doc, updateDoc} from 'firebase/firestore';
+
 import './styles.scss';
 import {BsFillTrashFill} from 'react-icons/bs';
-import { Link } from 'react-router-dom';
-
+import Button from '@mui/material/Button';
+import LoaderSqr from '../../components/LoaderSqr';
 
 
 const CartContainer = () => {
 
-  const {cart, removeItem, clearCart} =useContext(Shop);
+  const {cart, removeItem, clearCart, getTotal} =useContext(Shop);
 
+  const [loading, setLoading] = useState(false);
+
+  const updateStock=async(id, newStock)=>{
+    const docRef = doc(db, "products", id);
+    await updateDoc(docRef, {
+      stock: newStock
+    });
+  }
+
+  const handleSale=async()=>{
+    setLoading(true);
+    const totalAmount = getTotal();
+    const order= newOrder('lucia@gmai.com', 'Lucia', 'capp', 3416555222,cart, totalAmount);
+    
+    //saving order to firebase
+    const docRef = await addDoc(collection(db, 'orders'), order);
+    
+    //feedBack
+    setLoading(false);
+    alert("Gracias por su compra! La orden ha sido generada. "); //Esto tiene que quedar con sweet alert
+    
+    //updating product´s stock in firebase
+    cart.forEach(item => {
+      updateStock(item.id, item.stock-item.quantity);
+    });
+  }
 
 
   return (
     <div className="cartContainer">
-      <div className='cart'>
+      <div className='cartContent'>
         <div className="cartHeader">
             <span className='headerImg'>IMG</span>
             <span className='headerTitle'>title</span>
@@ -31,7 +61,7 @@ const CartContainer = () => {
           cart.length ?
           cart.map(item =>{
             return(
-              <div className="singleCartItem">
+              <div className="singleCartItem" key={item.id}>
                 <div className="cartItemImg">
                   <img src={`${item.img}`} alt="cartItemImg" />
                 </div>
@@ -51,12 +81,18 @@ const CartContainer = () => {
         <div className='cartIsEmpty'>
           <span>No hay productos en el carrito!</span>
           <Link to='/'><button>Ver productos</button></Link>
-          </div>
+        </div>
         }
       </div>
-      <div className="totalCart">
-      <button onClick={()=>clearCart()} className='clearCartBtn'>Vaciar Carrito<BsFillTrashFill/></button>
+      {
+      loading ? 
+      <div className="cartAction">
+        <Button variant="outlined" onClick={()=>clearCart()} className='clearCartBtn'>Vaciar Carrito<BsFillTrashFill/></Button>
+        <Button variant="contained" onClick={()=>handleSale()} className='FinalizeCartBtn'>Finalizar</Button>
       </div>
+      :
+      <LoaderSqr messaje="Aguarde un Momento" />
+      }
     </div>
   )
 }

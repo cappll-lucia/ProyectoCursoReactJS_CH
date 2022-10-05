@@ -7,7 +7,7 @@ import{BrowserRouter,Routes, Route}from 'react-router-dom'
 import NotFound from './components/NotFound';
 import ShopProvider from './context/ShopProvider';
 import CartContainer from './containers/CartContainer';
-import automaticalySaveProds from './services/saveProducts';
+// import automaticalySaveProds from './services/saveProducts';
 import { collection, getDocs } from "firebase/firestore";
 import {db} from './firebase/config';
 
@@ -38,7 +38,7 @@ function App() {
         });
         setCategories(firebaseCateg);
       };
-      automaticalySaveProds();
+      // automaticalySaveProds();
       getCategories();
     },[])
 
