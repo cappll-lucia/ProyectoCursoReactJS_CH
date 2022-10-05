@@ -1,0 +1,51 @@
+
+
+.loader{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction:column;
+    span{
+        z-index: 1000;
+        position: absolute;
+        top:23%;
+        padding: 8vw;
+        color: rgb(21, 21, 95);
+        font-size: 1.5rem;
+    }
+}
+
+
+.cube{
+    z-index: 1;
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%) rotate(0deg);
+    animation: anim 2s infinite ease-out;
+}
+
+.outerCube{
+    width: 10vw;
+    height: 10vw;
+    background-color: rgba(60, 255, 0, 0.5);
+}
+.innerCube{
+    width: 5vw;
+    height: 5vw;
+    background-color: rgba(0, 47, 255,0.5);
+}
+.innerCube2{
+    width: 2.5vw;
+    height: 2.5vw;
+    background-color:rgba(60, 255, 0,0.8) ;
+}
+
+@keyframes anim {
+    0%{
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    100%{
+        transform: translate(-50%, -50%) rotate(90deg);
+    }
+}
