@@ -30,7 +30,6 @@ const ItemListContainer = () => {
           firebaseProds.push({id: doc.id, 
                               ...doc.data()});
         });
-        console.log("Productos firebase: ", firebaseProds);
         setProducts(firebaseProds); 
       } catch (error) {
         console.log(error);
@@ -47,7 +46,6 @@ const ItemListContainer = () => {
       const getProducts = new Promise((accept, reject)=>{
         setTimeout(() => {
           accept(products)
-          console.log(accept);
         }, 2000);
       })
 

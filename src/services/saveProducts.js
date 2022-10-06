@@ -5,8 +5,6 @@ import {db} from '../firebase/config';
 
 const automaticalySaveProds =async()=>{
     try{
-        // const prodsToSave = new Promise((accept, rejet)=>{
-        //     accept(products);});
         const resp = await fetch('/data/products.json');
         const prodsToSave = await resp.json();
         prodsToSave.forEach(async(prod) => {
@@ -20,12 +18,9 @@ const automaticalySaveProds =async()=>{
                 category: prod.category,
                 description: prod.description
             });
-        console.log("Documento guardado en bd con id:", docRef.id);
         });
-        
-        console.log("pts: ",prodsToSave);
-    }catch{
-        console.log("Error: ", Error);
+    } catch{
+            console.log("Error: ", Error);
     }
 }
 

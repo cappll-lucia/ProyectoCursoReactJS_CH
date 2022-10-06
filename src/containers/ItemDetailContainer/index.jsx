@@ -27,12 +27,10 @@ const ItemDetailContainer = () => {
 
         /*get product desde fireBase*/
         const getProduct= async()=>{
-            // console.log("Antes: ", productDetail);
             const docRef = doc(db, "products", productID);
             const docSnap = await getDoc(docRef);
             if (docSnap.exists()) {
                 setProductDetail({id: docSnap.id, ...docSnap.data()});
-                // console.log("Despues: ", productDetail);
             } else {
             console.log("No such document!");
             }
