@@ -15,19 +15,8 @@ const Routing = () => {
     const [categories, setCategories]= useState([]);
 
     useEffect(()=>{
-        /* getCategories desde fakestore API*/
-        /*const getCategories = async()=>{
-        try {
-            const response = await fetch("https://fakestoreapi.com/products/categories/");
-            const categ = await response.json();
-            setCategories(categ);
-        } catch (error) {
-            console.log(error);
-        }
-        }
-      */
 
-        /* getCategories desde firebase*/
+        // getCategories from firebase
         const getCategories= async()=>{ 
             const querySnapshot = await getDocs(collection(db, "categories"));
             const firebaseCateg =[]

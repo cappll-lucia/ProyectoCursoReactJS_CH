@@ -14,18 +14,7 @@ const ItemDetailContainer = () => {
 
     useEffect(()=>{
 
-        /*get product desde fakeStoreAPI */
-        // const getProduct = async()=>{
-        //     try {
-        //         const response = await fetch (`https://fakestoreapi.com/products/${productID}`);
-        //         const data = await response.json();
-        //         setProductDetail(data);
-        //     } catch (error) {
-        //         console.log(error);
-        //     }
-        // }
-
-        /*get product desde fireBase*/
+        /*get single product from fireBase*/
         const getProduct= async()=>{
             const docRef = doc(db, "products", productID);
             const docSnap = await getDoc(docRef);
