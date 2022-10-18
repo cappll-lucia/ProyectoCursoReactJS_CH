@@ -1,5 +1,4 @@
 import React from 'react';
-import './styles.scss';
 import ItemList from '../../components/ItemList';
 import { useParams } from 'react-router-dom';
 import useFirebaseProds from '../../hooks/useFirebaseProds';
@@ -12,7 +11,7 @@ const ItemListContainer = () => {
   
   return (
     
-    <div className='ILC container-fluid'>
+    <div className='ILC container-fluid' style={{'margin':'0', 'padding':'0'}}>
         <ItemList products={products}/>
     </div>
     
