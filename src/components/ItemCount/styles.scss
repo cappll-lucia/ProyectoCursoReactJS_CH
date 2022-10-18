@@ -1,43 +1,38 @@
 @import '../../Vars.scss';
+// 069DBF
 
 #itemCount{
-    background-color:#fff;
-    margin: 0 2rem;
-    height: max-content;
-    width: 10rem;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    border-radius: 0.3rem;
-    border: solid #069DBF 2px;
-    overflow: hidden;
-    .itemCountCant{
-        font-size: 1.05rem;
-        padding: 0.3rem 0;
-        width: 100%;
-        justify-content: center;
-        margin-bottom: 0.2rem;   
-        background-color:none;
-        border-bottom: solid #069DBF 2px;
-    }
-    div{
+    width: 7rem;
+    margin: 1rem 3rem;
+    width: 10rem;
+    #counter{
         display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
+        width: 100%;
         justify-content: space-between;
+        border: solid $blueB 2px ;
+        border-radius: 10px;
+        align-items: center;
+        font-size: 1.3rem;
         .btnItemCount{
-            background-color:#fff;
+            padding: 5px 15px;
             border: none;
-            color: $sombra;
-            font-size: 1rem;
-            padding: 0 2.09rem;
-        }
-        .btnItemCountAdd{
-            border-right: solid #069DBF 2px;
+            background-color: transparent;
         }
         .btnItemCount:hover{
-            background-color: #c3e3eb;
+            background-color: #79c4d4;
+            border-radius:5px;
         }
     }
+    button{
+        background-color: $blueB;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        font-size: 1.3rem;
+        padding: 5%;
+        margin: 5% 0;
+    }
 }
+

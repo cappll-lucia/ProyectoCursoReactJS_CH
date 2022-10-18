@@ -11,11 +11,11 @@ const Item = ({prod}) =>{
 
   return (
     <div className="card product--card col-xl-2 col-lg-4 col-md-5 col-sm-5 col-10">
-        <img className="card-img-bottom" src={prod.img} alt="Card image"/>
+        <img className="card-img-bottom" src={prod.img} alt="producto"/>
         <div className="card-body">
             <p className="card-text">{prod.title}</p>
             <h3 className="card-title">$ {prod.price}</h3>
-            <a href="#" className="btn card-btn btn-primary btn_buy" id={prod.id} onClick={handleNavigate}>Ver más</a>
+            <span  className="btn card-btn btn-primary btn_buy" id={prod.id} onClick={handleNavigate}>Ver más</span>
         </div>
     </div>
   )

@@ -1,5 +1,6 @@
 import React from 'react';
 import {useState} from 'react';
+import {BsFillCartFill} from 'react-icons/bs';
 import './styles.scss';
 
 
@@ -21,18 +22,20 @@ const ItemCount = ({stock, initial, onAdd}) => {
     }
 
     const addCart=()=>{
+        let priceText = document.getElementById('ItemDetailPrice');
+        priceText.hidden=true;
         onAdd(count);
         SetCount(initial);
     }
 
   return (
     <div id='itemCount'>
-        <div className='itemCountCant' >{count}</div>
-        <div>
-            <button className='btnItemCount btnItemCountAdd' onClick={handleRest}>-</button>
-            <button className='btnItemCount' onClick={handleAdd}>+</button>
+        <div id='counter'>
+            <span className='btnItemCount' style={{'border-right' : 'solid  #1a217c 2px'}} onClick={handleRest}>-</span>
+            <span className='spnQuantity' >{count}</span>
+            <span className='btnItemCount' style={{'border-left' : 'solid  #1a217c 2px'}} onClick={handleAdd}>+</span>
         </div>
-        <button onClick={addCart}>Agregar al carrito</button>
+        <button  onClick={addCart}>Agregar   <BsFillCartFill style={{'color':'#fff'}}/> </button>
     </div>
     )
 }

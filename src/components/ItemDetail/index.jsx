@@ -28,13 +28,20 @@ const ItemDetail = ({product}) => {
     <div className='ItemDetail'>
       <div className="ItemDetailContent">
         <div className="ItemDetailImg">
-          <img src={product.image} alt='img-detail'/>
+          <img src={product.img} alt='img-detail'/>
         </div>
         <div className='ItemDetailInfo'>
           <h3 className='ItemDetailTitle'>{product.title}</h3>
           <span className='ItemDetailDesc'>{product.description}</span>
-          <span className='ItemDetailPrice'>$ {product.price}</span>
-          { qty ? <button onClick={handleFinish}>Finalizar compra</button> :<ItemCount stock={product.stock} initial={1} onAdd={addCart}/> }
+          <span className='ItemDetailPrice' id='ItemDetailPrice'>$ {product.price}</span>
+          { qty ? 
+                <div>
+                  <button className='btnDetailVerMas' onClick={()=>{navigate('/');}}>Ver más productos</button>
+                  <button className='btnDetailFinish' onClick={handleFinish}>Finalizar compra</button>
+                </div>
+                :
+                <ItemCount stock={product.stock} initial={1} onAdd={addCart}/> 
+          }
         </div> 
       </div>
     </div>
