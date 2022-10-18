@@ -80,7 +80,7 @@ const CartContainer = () => {
         :
         <div className='cartIsEmpty'>
           <span>No hay productos en el carrito!</span>
-          <Link to='/'><button>Ver productos</button></Link>
+          <Link to='/'><button className='btnCartIsEmpty'>Ver productos</button></Link>
         </div>
         }
       </div>

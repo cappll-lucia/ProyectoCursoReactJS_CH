@@ -35,7 +35,7 @@ const ItemCount = ({stock, initial, onAdd}) => {
             <span className='spnQuantity' >{count}</span>
             <span className='btnItemCount' style={{'border-left' : 'solid  #1a217c 2px'}} onClick={handleAdd}>+</span>
         </div>
-        <button  onClick={addCart}>Agregar   <BsFillCartFill style={{'color':'#fff'}}/> </button>
+        <button className='btnAgregar' onClick={addCart}>Agregar   <BsFillCartFill style={{'color':'#fff'}}/> </button>
     </div>
     )
 }
