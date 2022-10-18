@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import ItemDetail from '../../components/ItemDetail';
 import {db} from '../../firebase/config';
 import { doc, getDoc } from "firebase/firestore";
+import LoaderSqr from '../../components/LoaderSqr';
 
 
 const ItemDetailContainer = () => {
@@ -11,6 +12,10 @@ const ItemDetailContainer = () => {
     const [productDetail, setProductDetail]= useState({});
 
     const {productID}=useParams();
+
+    const navigate=useNavigate();
+
+
 
     useEffect(()=>{
 
@@ -21,7 +26,8 @@ const ItemDetailContainer = () => {
             if (docSnap.exists()) {
                 setProductDetail({id: docSnap.id, ...docSnap.data()});
             } else {
-            console.log("No such document!");
+                setProductDetail(false);
+                console.log("No such document!");
             }
         };
         getProduct();
@@ -29,7 +35,14 @@ const ItemDetailContainer = () => {
 
     return (
         <div>
-            <ItemDetail product={productDetail}/>
+            { productDetail!==false
+                ?
+                <ItemDetail product={productDetail}/>
+                :
+                <div>
+                    <LoaderSqr messaje={"Producto no encontrado"} messaje2={'Volver al inicio'} btnAction={()=>{navigate('/')}}/>
+                </div>
+                }
         </div>
     )
 }

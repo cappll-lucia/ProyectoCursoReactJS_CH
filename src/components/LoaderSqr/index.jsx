@@ -2,7 +2,8 @@ import React from 'react';
 import './styles.scss';
 import  '../../App.scss';
 
-const LoaderSqr = ({messaje}) => {
+const LoaderSqr = ({messaje, messaje2, btnAction}) => {
+
   return (
     <div className="screenSuspend">
       <div className="loader">
@@ -12,6 +13,12 @@ const LoaderSqr = ({messaje}) => {
               </div>
           </div>
           <span>{messaje}</span>
+          {
+            messaje2!='' ?
+            <button onClick={btnAction} >{messaje2}</button>
+            :
+            <></>
+          }
       </div>
       </div>
   )
