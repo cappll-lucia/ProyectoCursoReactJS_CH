@@ -34,7 +34,7 @@ const CartContainer = () => {
     
     //feedBack
     setLoading(false);
-    alert("Gracias por su compra! La orden ha sido generada. "); //Esto tiene que quedar con sweet alert
+    // alert("Gracias por su compra! La orden ha sido generada. ");
     
     //updating product´s stock in firebase
     cart.forEach(item => {
@@ -90,7 +90,7 @@ const CartContainer = () => {
         <button variant="contained" onClick={()=>handleSale()} className='FinalizeCartBtn'>Finalizar</button>
       </div>
       :
-      <LoaderSqr messaje="Aguarde un Momento" />
+      <LoaderSqr messaje="Generando su orden..." messaje2={''} />
       }
     </div>
   )
