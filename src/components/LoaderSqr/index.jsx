@@ -14,10 +14,9 @@ const LoaderSqr = ({messaje, messaje2, btnAction}) => {
           </div>
           <span>{messaje}</span>
           {
-            messaje2!=='' ?
+            messaje2!==""
+            &&
             <button className='btnLoaderSqr' onClick={btnAction} >{messaje2}</button>
-            :
-            <></>
           }
       </div>
       </div>

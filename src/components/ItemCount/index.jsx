@@ -18,7 +18,11 @@ const ItemCount = ({stock, initial, onAdd}) => {
     }
 
     const handleRest=()=>{
-        SetCount(count-1);
+        if(count-1>0) {
+            SetCount(count-1);
+        } else{
+            alert(`Sólo quedan ${stock} unidades disponibles`); //pasarla a swet alert
+        }
     }
 
     const addCart=()=>{
@@ -41,7 +45,7 @@ const ItemCount = ({stock, initial, onAdd}) => {
             <button className='btnAgregar' onClick={addCart}>Agregar   <BsFillCartFill style={{'color':'#fff'}}/> </button>
         </div>
         :
-        <span className='spanNoStock' style={{'width':'40rem', 'font-size':'1.2rem', 'color':'red'}}>Disculpe, No hay stock suficiente de este producto.</span>
+        <span className='spanNoStock' style={{'width':'40rem', 'font-size':'1.2rem', 'color':'red'}}>Disculpe, No hay stock disponible de este producto.</span>
     }
     </div>
     )
