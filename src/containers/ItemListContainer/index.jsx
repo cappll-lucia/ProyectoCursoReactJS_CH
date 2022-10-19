@@ -16,7 +16,7 @@ const ItemListContainer = () => {
         { !loading ?
         <ItemList products={products}/>
         :
-        <LoaderSqr messaje={'Cargando productos...'} messaje2={''}/>
+        <LoaderSqr messaje={'Cargando productos...'} messaje2={error}/>
         }
     </div>
     

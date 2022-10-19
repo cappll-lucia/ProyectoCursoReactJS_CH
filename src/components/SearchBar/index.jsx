@@ -15,7 +15,7 @@ const SearchBar = () => {
 
   return (
       <div className='SearchBar'>
-        <a href='#' className='SearchBarBtn'><BsSearch/></a>
+        <span className='SearchBarBtn'><BsSearch/></span>
         <input
           className="SearchInput" id='mySearchBar'
           type="text"
