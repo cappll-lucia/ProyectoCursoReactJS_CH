@@ -8,7 +8,6 @@ import {collection, addDoc, doc, updateDoc} from 'firebase/firestore';
 
 import './styles.scss';
 import {BsFillTrashFill} from 'react-icons/bs';
-import Button from '@mui/material/Button';
 import LoaderSqr from '../../components/LoaderSqr';
 
 
@@ -48,13 +47,13 @@ const CartContainer = () => {
     <div className="cartContainer">
       <div className='cartContent'>
         <div className="cartHeader">
-            <span className='headerImg'>IMG</span>
-            <span className='headerTitle'>title</span>
-            <span className='headerBrand'>brand</span>
+            <span className='headerImg'>Imagen</span>
+            <span className='headerTitle'>Producto</span>
+            <span className='headerBrand'>Marca</span>
             {/* <span className='headerCategory'>categ</span> */}
-            <span className='headerPrice'>precio</span>
-            <span className='headerQty'>cant</span>
-            <span className='headerTotal'>total</span>
+            <span className='headerPrice'>Precio</span>
+            <span className='headerQty'>Cantidad</span>
+            <span className='headerTotal'>Total</span>
         </div>
 
         {
@@ -87,8 +86,8 @@ const CartContainer = () => {
       {
       !loading ? 
       <div className="cartAction">
-        <Button variant="outlined" onClick={()=>clearCart()} className='clearCartBtn'>Vaciar Carrito<BsFillTrashFill/></Button>
-        <Button variant="contained" onClick={()=>handleSale()} className='FinalizeCartBtn'>Finalizar</Button>
+        <button variant="outlined" onClick={()=>clearCart()} className='clearCartBtn'>Vaciar Carrito<BsFillTrashFill/></button>
+        <button variant="contained" onClick={()=>handleSale()} className='FinalizeCartBtn'>Finalizar</button>
       </div>
       :
       <LoaderSqr messaje="Aguarde un Momento" />
