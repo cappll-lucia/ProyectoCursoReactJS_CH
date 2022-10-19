@@ -30,12 +30,19 @@ const ItemCount = ({stock, initial, onAdd}) => {
 
   return (
     <div id='itemCount'>
-        <div id='counter'>
-            <span className='btnItemCount' style={{'border-right' : 'solid  #1a217c 2px'}} onClick={handleRest}>-</span>
-            <span className='spnQuantity' >{count}</span>
-            <span className='btnItemCount' style={{'border-left' : 'solid  #1a217c 2px'}} onClick={handleAdd}>+</span>
+        {stock>0
+        ? 
+        <div>
+            <div id='counter'>
+                <span className='btnItemCount' style={{'border-right' : 'solid  #1a217c 2px'}} onClick={handleRest}>-</span>
+                <span className='spnQuantity' >{count}</span>
+                <span className='btnItemCount' style={{'border-left' : 'solid  #1a217c 2px'}} onClick={handleAdd}>+</span>
+            </div>
+            <button className='btnAgregar' onClick={addCart}>Agregar   <BsFillCartFill style={{'color':'#fff'}}/> </button>
         </div>
-        <button className='btnAgregar' onClick={addCart}>Agregar   <BsFillCartFill style={{'color':'#fff'}}/> </button>
+        :
+        <span className='spanNoStock' style={{'width':'40rem', 'font-size':'1.2rem', 'color':'red'}}>Disculpe, No hay stock suficiente de este producto.</span>
+    }
     </div>
     )
 }

@@ -3,7 +3,7 @@
 
 .product--card{
     display: block;
-    box-shadow: 2.0px 5.0px 8.0px hsl(0deg 0% 0% / 0.38);
+    box-shadow: 2.0px 5.0px 8.0px #00000061;
     margin: 1rem;
     text-align: left;
     border-radius: 10px;
@@ -49,6 +49,11 @@
                 font-size: 18px;
                 color: $sombra;
             }
+        }
+        .sinStock{
+            font-size: 1.1rem;
+            color: rgb(177, 0, 0);
+            font-style: italic;
         }
         .card-btn:hover{
             transform: scale(1.1);

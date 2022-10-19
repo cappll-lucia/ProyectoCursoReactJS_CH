@@ -15,6 +15,7 @@ const Item = ({prod}) =>{
         <div className="card-body">
             <p className="card-text">{prod.title}</p>
             <h3 className="card-title">$ {prod.price}</h3>
+            {prod.stock<=0 && <p className='sinStock'>Sin stock</p>}
             <span  className="btn card-btn btn-primary btn_buy" id={prod.id} onClick={handleNavigate}>Ver más</span>
         </div>
     </div>
