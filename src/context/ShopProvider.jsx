@@ -7,6 +7,7 @@ export const Shop = createContext();
 const ShopProvider = ({children}) => {
 
     const [cart, setCart]=useState([]);
+    const [client, setClient]=useState({});
 
     const addItem=(item)=>{
         if(!isInCart(item.id)){
@@ -44,7 +45,7 @@ const ShopProvider = ({children}) => {
     
 
     return (
-        <Shop.Provider value={{cart, addItem, removeItem, clearCart, getTotal}}>
+        <Shop.Provider value={{cart, addItem, removeItem, clearCart, getTotal, client, setClient}}>
             {children}
         </Shop.Provider>
     )

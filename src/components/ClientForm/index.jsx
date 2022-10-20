@@ -2,18 +2,13 @@ import React from 'react';
 import {useForm} from 'react-hook-form';
 import { Navigate } from 'react-router-dom';
 import './styles.scss';
+import {Shop} from '../../context/ShopProvider';
+import { useContext } from 'react';
 
 
-const ClientForm = ({save}) => {
+const ClientForm = () => {
     
-    class Client{
-        constructor(nombre, apell, mail, tel){
-            this.name=nombre;
-            this.surname=apell;
-            this.email=mail;
-            this.phone=tel  ;
-        }
-    }
+    const {client, setClient} =useContext(Shop);
 
     let email="";
     let confEmail="";
@@ -27,17 +22,13 @@ const ClientForm = ({save}) => {
 
 
     const onSubmit = (datos)=>{
-        // let actualClient = new Client(datos.name, datos.surname, datos.email, datos.phone);
-        // save({...actualClient});
-
         let actualClient ={
             name:datos.name,
             surname:datos.surname,
             email:datos.email,
             phone:datos.phone,
         };
-                console.log(actualClient);
-        save(true);
+        setClient(actualClient);
     }
 
 
