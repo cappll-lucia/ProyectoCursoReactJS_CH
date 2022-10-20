@@ -1,7 +1,19 @@
 ## Proyecto final del curso React en Coderhouse
 
-El proyecto se trata de un Ecommerce. 
+Durante el curso de react he desarrollado un ecommerce.
 
-Librerías utilizadas:
-    * react-routing.dom: librería de Routing
+
+Sitio: 
+    * https://optica-criado-react.vercel.app/
+
+Librerías utilizadas en el proyecto:
+    * react-routing.dom: librería de Routing.
+    * react-hook-form: validaciones en formulario.
+    * react-icons: iconos de react.
+    * react-tostify: librería de alertas.
     * firebase: servicios cloud para el consumo de datos.
+    * boostrap: framework css.
+    * scss: styles sheet language.
+    * web-vitals: librería para métricas.
+
+
