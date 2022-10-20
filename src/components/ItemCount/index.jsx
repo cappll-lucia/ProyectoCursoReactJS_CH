@@ -1,7 +1,9 @@
 import React from 'react';
 import {useState} from 'react';
 import {BsFillCartFill} from 'react-icons/bs';
-import './styles.scss';
+import { ToastContainer, toast, Zoom} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import'./styles.scss';
 
 
 
@@ -13,7 +15,7 @@ const ItemCount = ({stock, initial, onAdd}) => {
         if(count<stock){
             SetCount(count+1);
         }else{
-            alert(`Sólo quedan ${stock} unidades disponibles`); //pasarla a swet alert
+            toast(`Sólo quedan ${stock} unidades disponibles`)
         }
     }
 
@@ -21,7 +23,7 @@ const ItemCount = ({stock, initial, onAdd}) => {
         if(count-1>0) {
             SetCount(count-1);
         } else{
-            alert(`Sólo quedan ${stock} unidades disponibles`); //pasarla a swet alert
+            toast('No es posible seleccionar menos de un item')
         }
     }
 
@@ -34,6 +36,12 @@ const ItemCount = ({stock, initial, onAdd}) => {
 
   return (
     <div id='itemCount'>
+        <ToastContainer
+            draggable={false}
+            transition={Zoom}
+            autoClose={800}
+            position={'top-center'}
+        />
         {stock>0
         ? 
         <div>

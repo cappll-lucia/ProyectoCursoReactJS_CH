@@ -2,12 +2,12 @@ import React, { useContext, useState } from 'react'
 import {Shop} from '../../context/ShopProvider';
 import '../Order/styles.scss';
 import { useNavigate } from 'react-router-dom';
-import swal from 'sweetalert';
 import LoaderSqr from '../LoaderSqr';
 import {db} from '../../firebase/config';
 import newOrder from '../../services/newOrder';
 import {collection, addDoc, doc, updateDoc} from 'firebase/firestore';
-
+import { ToastContainer, toast, Zoom} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Order = () => {
 
@@ -28,16 +28,13 @@ const Order = () => {
   const handleCancelOrder=()=>{
     clearCart();
     setClient(null);
-    alert("Productos eliminados");
+    toast("Orden cancelada");
     navigate('/');
   }
 
   const handleConfirmOrder=async()=>{
     setLoading(true);
-    console.log(cart);
     const order= newOrder(client.email, client.name, client.surname, client.phone, cart, Total);
-    console.log(order);
-    console.log(order.items);
     //saving order to firebase
     const docRef = await addDoc(collection(db, 'orders'), order);
     setOrderID(docRef._key.path.segments[1]);
@@ -46,6 +43,7 @@ const Order = () => {
     cart.forEach(item => {
     updateStock(item.id, item.stock-item.quantity);
     });
+    toast("Orden generada");
   }
 
   const finish = ()=>{
@@ -59,6 +57,12 @@ const Order = () => {
     !loading 
     ?
     <div className='Order'>
+        <ToastContainer
+            draggable={false}
+            transition={Zoom}
+            autoClose={800}
+            position={'top-center'}
+        />
       <div className='orderContent'>
       {cart.map(item =>{
             return(

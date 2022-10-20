@@ -1,6 +1,5 @@
 import React from 'react';
 import {useForm} from 'react-hook-form';
-import { Navigate } from 'react-router-dom';
 import './styles.scss';
 import {Shop} from '../../context/ShopProvider';
 import { useContext } from 'react';
@@ -8,7 +7,7 @@ import { useContext } from 'react';
 
 const ClientForm = () => {
     
-    const {client, setClient} =useContext(Shop);
+    const {setClient} =useContext(Shop);
 
     let email="";
     let confEmail="";
@@ -75,7 +74,7 @@ return (
                 <label className='ClientFormLabel'>Confirmar Email</label>
                 <input className='ClientFormInput' onBlur={onBlurConfirmEmai} type="text" {...register('reqEmail',{
                     required: true,
-                    validate: ()=>{return confEmail==email}
+                    validate: ()=>{return confEmail===email}
                 })}/>
                 {errors.reqEmail?.type==='required' && <span className='formError'>Confirme su email</span>}
                 {errors.reqEmail?.type==='validate' && <span className='formError'>Los emails ingresados no coinciden</span>}
