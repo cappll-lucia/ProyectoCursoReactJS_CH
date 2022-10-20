@@ -35,7 +35,7 @@
       "title": "Camara de fotos tipo Polaroid",
       "price": 25000,
       "stock": 2,
-      "img": "/gallery/card_fotografia2.jpg",
+      "img": "/gallery/card_fotografia.jpg",
       "category": "Fotografía",
       "description": "Apunta, dispara e imprimí tus mejores momentos con la cámara de fotos instantáneas Polaroid Now"
     },
@@ -51,7 +51,7 @@
     {
       "codProd": 25123,
       "brand": "Vulk",
-      "title": "triangle_black",
+      "title": "Black Tingl",
       "price": 13000,
       "stock": 2,
       "img": "/gallery/card_recetados4.jpg",
@@ -60,7 +60,7 @@
     {
       "codProd": 25124,
       "brand": "Ossira",
-      "title": "sqr_brown",
+      "title": "Classic Brown",
       "price": 15000,
       "stock": 3,
       "img": "/gallery/card_recetados5.jpg",
@@ -69,7 +69,7 @@
     {
       "codProd": 25125,
       "brand": "RayBan",
-      "title": "rb_black",
+      "title": "Classic Circle Black",
       "price": 41200,
       "stock": 2,
       "img": "/gallery/card_sol.png",
@@ -79,47 +79,46 @@
     {
       "codProd": 25126,
       "brand": "Rusty",
-      "title": "poligon_mirror",
+      "title": "Mirror sunglasses",
       "price": 20780,
       "stock": 3,
       "img": "/gallery/card_sol2.png",
       "category": "Anteojos de Sol",
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima labore rem totam consectetur cum excepturi, ducimus vero sequi nihil vitae natus voluptatibus sunt rerum accusantium architecto quas, commodi delectus quam?"
+      "description": "Anteojos de sol Espejados. Cristales polarizados. Proteccion UV."
     },
     {
       "codProd": 25127,
       "brand": "Vonk",
-      "title": "cover_black",
+      "title": "Full Cover",
       "price": 19300,
       "stock": 1,
       "img": "/gallery/card_sol3.jpg",
       "category": "Anteojos de Sol",
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima labore rem totam consectetur cum excepturi, ducimus vero sequi nihil vitae natus voluptatibus sunt rerum accusantium architecto quas, commodi delectus quam?"
+      "description": "Anteojos de sol polarizados. Patillas flex"    
     },
     {
       "codProd": 25129,
       "brand": "RayBan",
-      "title": "circle_brown",
+      "title": "Sun Lennon",
       "price": 32000,
       "stock": 2,
       "img": "/gallery/card_sol5.jpg",
       "category": "Anteojos de Sol",
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima labore rem totam consectetur cum excepturi, ducimus vero sequi nihil vitae natus voluptatibus sunt rerum accusantium architecto quas, commodi delectus quam?"
-    },
+      "description": "Anteojos de sol polarizados. Proteccion UV.  Patillas flex"    },
     {
       "codProd": 25130,
       "brand": "Vertigo",
       "title": "Portarretrato 6 en 1",
       "price": 850,
       "stock": 20,
-      "img": "/gallery/card_fotografia.jpg",
+      "img": "/gallery/card_fotografia2.jpg",
       "category": "Fotografía",
       "description": "Portarretrato para 6 fotos. Dimensiones: largo 41 x ancho 3,2 x alto 31 cm. Materia: MDF (fibra de madera)."
     },
     {
       "codProd": 25130,
       "brand": "Polaroid",
-      "title": "Papel impresion para camara Polaroid",
+      "title": "Papel impresion Polaroid",
       "price": 5000,
       "stock": 15,
       "img": "/gallery/card_fotografia3.jpg",

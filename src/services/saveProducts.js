@@ -4,6 +4,7 @@ import {db} from '../firebase/config';
 
 
 const automaticalySaveProds =async()=>{
+    let reff="";
     try{
         const resp = await fetch('/data/products.json');
         const prodsToSave = await resp.json();
@@ -18,9 +19,10 @@ const automaticalySaveProds =async()=>{
                 category: prod.category,
                 description: prod.description
             });
+            reff=docRef;
         });
     } catch{
-            console.log("Error: ", Error, docRef);
+            console.log("Error: ", Error, reff);
     }
 }
 

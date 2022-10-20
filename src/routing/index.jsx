@@ -16,7 +16,6 @@ const Routing = () => {
     const [categories, setCategories]= useState([]);
 
     useEffect(()=>{
-
         // getCategories from firebase
         const getCategories= async()=>{ 
             const querySnapshot = await getDocs(collection(db, "categories"));
