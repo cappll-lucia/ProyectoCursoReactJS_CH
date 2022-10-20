@@ -5,6 +5,7 @@ import ItemDetailContainer from '../containers/ItemDetailContainer';
 import ItemListContainer from '../containers/ItemListContainer';
 import{BrowserRouter,Routes, Route, Navigate}from 'react-router-dom'
 import CartContainer from '../containers/CartContainer';
+import CheckoutContainer from '../containers/CheckoutContainer';
 // import automaticalySaveProds from './services/saveProducts';
 import { collection, getDocs } from "firebase/firestore";
 import {db} from '../firebase/config';
@@ -37,6 +38,7 @@ const Routing = () => {
             <Route path='/category/:categoryID' element={<ItemListContainer/>}/>
             <Route path='/detail/:productID' element={<ItemDetailContainer/>}/>
             <Route path='/cart' element={<CartContainer/>}/>
+            <Route path='/checkout' element={<CheckoutContainer/>}/>
             <Route path='*' element={<LoaderSqr messaje={'Ups! Pagina no encontrada'} messaje2={'Volver al inicio'} btnAction={()=>{Navigate('/');}}/>}/>
         </Routes>
     </BrowserRouter>

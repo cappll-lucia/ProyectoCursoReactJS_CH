@@ -1,7 +1,7 @@
 import React, { useContext, useState} from 'react';
 // import { useParams } from 'react-router-dom';
 import {Shop} from '../../context/ShopProvider';
-import { Link } from 'react-router-dom';
+import { Link, Navigate, useNavigate } from 'react-router-dom';
 import newOrder from '../../services/newOrder';
 import {db} from '../../firebase/config';
 import {collection, addDoc, doc, updateDoc} from 'firebase/firestore';
@@ -17,6 +17,8 @@ const CartContainer = () => {
 
   const [loading, setLoading] = useState(false);
 
+  const navigate=useNavigate();
+
   const updateStock=async(id, newStock)=>{
     const docRef = doc(db, "products", id);
     await updateDoc(docRef, {
@@ -24,23 +26,23 @@ const CartContainer = () => {
     });
   }
 
-  const handleSale=async()=>{
-    setLoading(true);
-    const totalAmount = getTotal();
-    const order= newOrder('lucia@gmai.com', 'Lucia', 'capp', 3416555222,cart, totalAmount);
+  // const handleSale=async()=>{
+  //   setLoading(true);
+  //   const totalAmount = getTotal();
+  //   const order= newOrder('lucia@gmai.com', 'Lucia', 'capp', 3416555222,cart, totalAmount);
     
-    //saving order to firebase
-    const docRef = await addDoc(collection(db, 'orders'), order);
+  //   //saving order to firebase
+  //   const docRef = await addDoc(collection(db, 'orders'), order);
     
-    //feedBack
-    setLoading(false);
-    // alert("Gracias por su compra! La orden ha sido generada. ");
+  //   //feedBack
+  //   setLoading(false);
+  //   // alert("Gracias por su compra! La orden ha sido generada. ");
     
-    //updating product´s stock in firebase
-    cart.forEach(item => {
-      updateStock(item.id, item.stock-item.quantity);
-    });
-  }
+  //   //updating product´s stock in firebase
+  //   cart.forEach(item => {
+  //     updateStock(item.id, item.stock-item.quantity);
+  //   });
+  // }
 
 
   return (
@@ -87,7 +89,7 @@ const CartContainer = () => {
       !loading ? 
       <div className="cartAction">
         <button variant="outlined" onClick={()=>clearCart()} className='clearCartBtn'>Vaciar Carrito<BsFillTrashFill/></button>
-        <button variant="contained" onClick={()=>handleSale()} className='FinalizeCartBtn'>Finalizar</button>
+        <button variant="contained" onClick={()=>{navigate('/checkout')}} className='FinalizeCartBtn'>Finalizar</button>
       </div>
       :
       <LoaderSqr messaje="Generando su orden..." messaje2={''} />
