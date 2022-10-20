@@ -1,6 +1,6 @@
 # Proyecto final del curso React en Coderhouse
 
-### Durante el curso de react he desarrollado un ecommerce.
+### Durante el curso he desarrollado un ecommerce.
 
 
 ## Sitio: 
