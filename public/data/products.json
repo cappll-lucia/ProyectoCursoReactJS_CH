@@ -7,7 +7,7 @@
     "stock": 3,
     "img": "/gallery/card_sol4.jpg",
     "category": "Anteojos de Sol",
-    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima labore rem totam consectetur cum excepturi, ducimus vero sequi nihil vitae natus voluptatibus sunt rerum accusantium architecto quas, commodi delectus quam?"
+    "description": "Anteojos de sol polarizados. Proteccion UV. Tratamiento antirreflejo.  Patillas flex"
   },
     {
       "codProd": 25120,
@@ -42,7 +42,7 @@
     {
       "codProd": 25122,
       "brand": "Valdez",
-      "title": "sqr_gold",
+      "title": "Gold Square",
       "price": 31000,
       "stock": 1,
       "img": "/gallery/card_recetados3.jpg",
