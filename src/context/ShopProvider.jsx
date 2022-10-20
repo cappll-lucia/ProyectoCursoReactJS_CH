@@ -7,7 +7,7 @@ export const Shop = createContext();
 const ShopProvider = ({children}) => {
 
     const [cart, setCart]=useState([]);
-    const [client, setClient]=useState({});
+    const [client, setClient]=useState(null);
 
     const addItem=(item)=>{
         if(!isInCart(item.id)){

@@ -88,8 +88,8 @@ const CartContainer = () => {
       {
       !loading ? 
       <div className="cartAction">
-        <button variant="outlined" onClick={()=>clearCart()} className='clearCartBtn'>Vaciar Carrito<BsFillTrashFill/></button>
-        <button variant="contained" onClick={()=>{navigate('/checkout')}} className='FinalizeCartBtn'>Finalizar</button>
+                <button onClick={()=>{navigate('/checkout')}} className='FinalizeCartBtn'>Finalizar</button>
+        <button onClick={()=>clearCart()} className='clearCartBtn'>Vaciar Carrito<BsFillTrashFill/></button>
       </div>
       :
       <LoaderSqr messaje="Generando su orden..." messaje2={''} />

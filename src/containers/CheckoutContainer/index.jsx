@@ -8,11 +8,11 @@ import { Shop } from '../../context/ShopProvider';
 const CheckoutContainer = () => {
 
     const {client} =useContext(Shop);
-    console.log('cliente: ', client);
+
   return (
     <div>
         {
-        client=={}
+        client==null
         ?
         <ClientForm/>
         :

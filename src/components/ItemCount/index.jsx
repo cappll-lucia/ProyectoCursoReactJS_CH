@@ -38,14 +38,14 @@ const ItemCount = ({stock, initial, onAdd}) => {
         ? 
         <div>
             <div id='counter'>
-                <span className='btnItemCount' style={{'border-right' : 'solid  #1a217c 2px'}} onClick={handleRest}>-</span>
+                <span className='btnItemCount' style={{'borderRight' : 'solid  #1a217c 2px'}} onClick={handleRest}>-</span>
                 <span className='spnQuantity' >{count}</span>
-                <span className='btnItemCount' style={{'border-left' : 'solid  #1a217c 2px'}} onClick={handleAdd}>+</span>
+                <span className='btnItemCount' style={{'borderLeft' : 'solid  #1a217c 2px'}} onClick={handleAdd}>+</span>
             </div>
             <button className='btnAgregar' onClick={addCart}>Agregar   <BsFillCartFill style={{'color':'#fff'}}/> </button>
         </div>
         :
-        <span className='spanNoStock' style={{'width':'40rem', 'font-size':'1.2rem', 'color':'red'}}>Disculpe, No hay stock disponible de este producto.</span>
+        <span className='spanNoStock' style={{'width':'40rem', 'fontSize':'1.2rem', 'color':'red'}}>Disculpe, No hay stock disponible de este producto.</span>
     }
     </div>
     )
