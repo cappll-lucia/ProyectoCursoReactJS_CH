@@ -1,4 +1,14 @@
 [
+  {
+    "codProd": 5128,
+    "brand": "RayBan",
+    "title": "circle_gold",
+    "price": 50100,
+    "stock": 3,
+    "img": "/gallery/card_sol4.jpg",
+    "category": "Anteojos de Sol",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima labore rem totam consectetur cum excepturi, ducimus vero sequi nihil vitae natus voluptatibus sunt rerum accusantium architecto quas, commodi delectus quam?"
+  },
     {
       "codProd": 25120,
       "brand": "Valdez",
@@ -6,7 +16,7 @@
       "price": 20000,
       "stock": 3,
       "img": "/gallery/card_recetados.jpg",
-      "category": "receta",
+      "category": "Anteojos Recetados",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima labore rem totam consectetur cum excepturi, ducimus vero sequi nihil vitae natus voluptatibus sunt rerum accusantium architecto quas, commodi delectus quam?"
     },
     {
@@ -16,8 +26,18 @@
       "price": 18450,
       "stock": 3,
       "img": "/gallery/card_recetados2.jpg",
-      "category": "receta",
+      "category": "Anteojos Recetados",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima labore rem totam consectetur cum excepturi, ducimus vero sequi nihil vitae natus voluptatibus sunt rerum accusantium architecto quas, commodi delectus quam?"
+    },
+    {
+      "codProd": 25130,
+      "brand": "Polaroid",
+      "title": "Camara de fotos tipo Polaroid",
+      "price": 25000,
+      "stock": 2,
+      "img": "/gallery/card_fotografia2.jpg",
+      "category": "Fotografía",
+      "description": "Apunta, dispara e imprimí tus mejores momentos con la cámara de fotos instantáneas Polaroid Now"
     },
     {
       "codProd": 25122,
@@ -26,7 +46,7 @@
       "price": 31000,
       "stock": 1,
       "img": "/gallery/card_recetados3.jpg",
-      "category": "receta",
+      "category": "Anteojos Recetados",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima labore rem totam consectetur cum excepturi, ducimus vero sequi nihil vitae natus voluptatibus sunt rerum accusantium architecto quas, commodi delectus quam?"
     },
     {
@@ -36,7 +56,7 @@
       "price": 13000,
       "stock": 2,
       "img": "/gallery/card_recetados4.jpg",
-      "category": "receta",
+      "category": "Anteojos Recetados",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima labore rem totam consectetur cum excepturi, ducimus vero sequi nihil vitae natus voluptatibus sunt rerum accusantium architecto quas, commodi delectus quam?"
     },
     {
@@ -46,7 +66,7 @@
       "price": 15000,
       "stock": 3,
       "img": "/gallery/card_recetados5.jpg",
-      "category": "receta",
+      "category": "Anteojos Recetados",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima labore rem totam consectetur cum excepturi, ducimus vero sequi nihil vitae natus voluptatibus sunt rerum accusantium architecto quas, commodi delectus quam?"
     },
     {
@@ -56,7 +76,7 @@
       "price": 41200,
       "stock": 2,
       "img": "/gallery/card_sol.png",
-      "category": "sol",
+      "category": "Anteojos de Sol",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima labore rem totam consectetur cum excepturi, ducimus vero sequi nihil vitae natus voluptatibus sunt rerum accusantium architecto quas, commodi delectus quam?"
     },
     {
@@ -66,7 +86,7 @@
       "price": 20780,
       "stock": 3,
       "img": "/gallery/card_sol2.png",
-      "category": "sol",
+      "category": "Anteojos de Sol",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima labore rem totam consectetur cum excepturi, ducimus vero sequi nihil vitae natus voluptatibus sunt rerum accusantium architecto quas, commodi delectus quam?"
     },
     {
@@ -76,17 +96,7 @@
       "price": 19300,
       "stock": 1,
       "img": "/gallery/card_sol3.jpg",
-      "category": "sol",
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima labore rem totam consectetur cum excepturi, ducimus vero sequi nihil vitae natus voluptatibus sunt rerum accusantium architecto quas, commodi delectus quam?"
-    },
-    {
-      "codProd": 5128,
-      "brand": "RayBan",
-      "title": "circle_gold",
-      "price": 50100,
-      "stock": 3,
-      "img": "/gallery/card_sol4.jpg",
-      "category": "sol",
+      "category": "Anteojos de Sol",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima labore rem totam consectetur cum excepturi, ducimus vero sequi nihil vitae natus voluptatibus sunt rerum accusantium architecto quas, commodi delectus quam?"
     },
     {
@@ -96,7 +106,27 @@
       "price": 32000,
       "stock": 2,
       "img": "/gallery/card_sol5.jpg",
-      "category": "sol",
+      "category": "Anteojos de Sol",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima labore rem totam consectetur cum excepturi, ducimus vero sequi nihil vitae natus voluptatibus sunt rerum accusantium architecto quas, commodi delectus quam?"
+    },
+    {
+      "codProd": 25130,
+      "brand": "Vertigo",
+      "title": "Portarretrato 6 en 1",
+      "price": 850,
+      "stock": 20,
+      "img": "/gallery/card_fotografia.jpg",
+      "category": "Fotografía",
+      "description": "Portarretrato para 6 fotos. Dimensiones: largo 41 x ancho 3,2 x alto 31 cm. Materia: MDF (fibra de madera)."
+    },
+    {
+      "codProd": 25130,
+      "brand": "Polaroid",
+      "title": "Papel impresion para camara Polaroid",
+      "price": 5000,
+      "stock": 15,
+      "img": "/gallery/card_fotografia3.jpg",
+      "category": "Fotografía",
+      "description": "La película más colorida de Polaroid. Dale un toque especial a tus fotos instantáneas con esta edición limitada con marcos de vibrantes colores degradados inspirados en el logo de la mítica marca. Cada carga contiene ocho fotos i-Type en color"
     }
   ]

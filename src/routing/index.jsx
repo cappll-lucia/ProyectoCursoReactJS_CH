@@ -6,7 +6,7 @@ import ItemListContainer from '../containers/ItemListContainer';
 import{BrowserRouter,Routes, Route, Navigate}from 'react-router-dom'
 import CartContainer from '../containers/CartContainer';
 import CheckoutContainer from '../containers/CheckoutContainer';
-// import automaticalySaveProds from './services/saveProducts';
+// import automaticalySaveProds from '../services/saveProducts';
 import { collection, getDocs } from "firebase/firestore";
 import {db} from '../firebase/config';
 import LoaderSqr from '../components/LoaderSqr';

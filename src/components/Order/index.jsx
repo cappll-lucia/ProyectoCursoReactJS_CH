@@ -94,7 +94,6 @@ const Order = () => {
           <div className='orderID'>
             <h3>ID de su orden: {orderID}</h3>
             <button onClick={finish} className='btnConfirmOrder'>Volver al incicio</button>
-
           </div>
       }
         

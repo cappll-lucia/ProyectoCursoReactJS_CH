@@ -20,7 +20,7 @@ const automaticalySaveProds =async()=>{
             });
         });
     } catch{
-            console.log("Error: ", Error);
+            console.log("Error: ", Error, docRef);
     }
 }
 

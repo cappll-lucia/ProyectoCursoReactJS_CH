@@ -10,7 +10,7 @@ const CartWidget = () => {
   return (
     <div className='cartIcon'>
         <BsFillCartFill/> 
-        <span style={{'textDecoration':'none'}} className='quantity'> | {cart.length} items</span>
+        <span className='quantity'> | {cart.length} items</span>
     </div>
   )
 }

@@ -3,7 +3,7 @@
 
 .topHeader{
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     height: 8rem;
     padding: 0 1rem;
@@ -24,15 +24,16 @@
     margin: 0;
     z-index: 2000;
     border-bottom: solid rgb(209, 208, 208) 1px;
-    a, span {
+    .NavBarCateg, span {
         float: left;
+        color: $blueA;
         display: block;
         text-align: center;
         padding: 0.7rem;
         text-decoration: none;
-        font-size: 90%;
+        font-size:1.1rem;
         text-transform: uppercase;
-        font-weight: 400;
+        font-weight: 600;
         letter-spacing: 1px;
         margin-left: 3%;
     }
@@ -40,7 +41,6 @@
 
 
 .topnav a:hover{
-    background-color: $blueA;
     border-bottom: solid $greenB 10px;
     padding-bottom: 4px;
 }

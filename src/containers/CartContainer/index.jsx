@@ -1,7 +1,6 @@
 import React, { useContext, useState} from 'react';
-// import { useParams } from 'react-router-dom';
 import {Shop} from '../../context/ShopProvider';
-import { Link, Navigate, useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 import './styles.scss';
 import {BsFillTrashFill} from 'react-icons/bs';
@@ -11,6 +10,8 @@ import LoaderSqr from '../../components/LoaderSqr';
 const CartContainer = () => {
 
   const {cart, removeItem, clearCart, getTotal} =useContext(Shop);
+
+  let totalAcum = getTotal();
 
   const [loading, setLoading] = useState(false);
 
@@ -23,7 +24,6 @@ const CartContainer = () => {
             <span className='headerImg'>Imagen</span>
             <span className='headerTitle'>Producto</span>
             <span className='headerBrand'>Marca</span>
-            {/* <span className='headerCategory'>categ</span> */}
             <span className='headerPrice'>Precio</span>
             <span className='headerQty'>Cantidad</span>
             <span className='headerTotal'>Total</span>
@@ -56,11 +56,12 @@ const CartContainer = () => {
         </div>
         }
       </div>
+      <h3v className="totalCart">Total: ${totalAcum}</h3v>
       {
       !loading ? 
       <div className="cartAction">
-                <button onClick={()=>{navigate('/checkout')}} className='FinalizeCartBtn'>Finalizar</button>
         <button onClick={()=>clearCart()} className='clearCartBtn'>Vaciar Carrito<BsFillTrashFill/></button>
+        <button onClick={()=>{setLoading(true);navigate('/checkout');}} className='FinalizeCartBtn'>Finalizar</button>
       </div>
       :
       <LoaderSqr messaje="Generando su orden..." messaje2={''} />

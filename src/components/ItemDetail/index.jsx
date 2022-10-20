@@ -18,6 +18,12 @@ const ItemDetail = ({product}) => {
     setQty(quantity);
   }
 
+  const handleAddAndContinue =()=>{
+    const productLine = {...product, quantity:qty};
+    addItem(productLine);
+    navigate('/');
+  }
+
   const handleFinish=()=>{
     const productLine = {...product, quantity:qty};
     addItem(productLine);
@@ -36,7 +42,7 @@ const ItemDetail = ({product}) => {
           <span className='ItemDetailPrice' id='ItemDetailPrice'>$ {product.price}</span>
           { qty ? 
                 <div>
-                  <button className='btnDetailVerMas' onClick={()=>{navigate('/');}}>Ver más productos</button>
+                  <button className='btnDetailVerMas' onClick={handleAddAndContinue}>Ver más productos</button>
                   <button className='btnDetailFinish' onClick={handleFinish}>Finalizar compra</button>
                 </div>
                 :
