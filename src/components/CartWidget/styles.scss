@@ -6,5 +6,10 @@
     border-radius: 5rem;
     border: solid $blueA 2px;
     font-size: 1.3rem;
+    position: absolute;
+    right: 5rem;
+    top: 2rem;
+    span{
+        text-decoration: none;
     }
-
+}

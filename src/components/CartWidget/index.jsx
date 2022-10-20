@@ -1,12 +1,16 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './styles.scss';
 import {BsFillCartFill} from 'react-icons/bs';
+import { Shop } from '../../context/ShopProvider';
 
-const CartWidget = ({quantity}) => {
+const CartWidget = () => {
+
+  const {cart}=useContext(Shop);
+
   return (
     <div className='cartIcon'>
         <BsFillCartFill/> 
-        <span className='quantity'> | {quantity} items</span>
+        <span style={{'textDecoration':'none'}} className='quantity'> | {cart.length} items</span>
     </div>
   )
 }
