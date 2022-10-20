@@ -72,24 +72,35 @@
     align-items: center;
     flex-direction: column;
     margin: 2rem 0;
-    .btnCancelOrder{
-        width: 20rem;
-        background-color: #fff;
-        color: $blueB;
-        font-weight: 600;
-        border: solid $blueB 2px;
-        border-radius: 5px;
-        font-size: 1rem;
-        padding: 10px;
-        margin: 0.5rem ;
+}
+
+
+.orderID{
+    width: 53%;
+    font-size: 1.5rem;
+    h3{
+        margin: 2rem 0;
     }
-    .btnConfirmOrder{
-        width:20rem;
-        background-image: linear-gradient(to top, #1e3c72 0%, #1e3c72 1%, #1e4485 100%);
-        color: #fff;
-        border: none;
-        border-radius: 5px;
-        font-size: 1rem;
-        padding: 10px;
-    }
+}
+
+
+.btnCancelOrder{
+    width: 20rem;
+    background-color: #fff;
+    color: $blueB;
+    font-weight: 600;
+    border: solid $blueB 2px;
+    border-radius: 5px;
+    font-size: 1rem;
+    padding: 10px;
+    margin: 0.5rem ;
+}
+.btnConfirmOrder{
+    width:20rem;
+    background-image: linear-gradient(to top, #1e3c72 0%, #1e3c72 1%, #1e4485 100%);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    padding: 10px;
 }

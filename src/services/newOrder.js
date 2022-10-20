@@ -1,5 +1,6 @@
 
 const newOrder =(email, name, surname, phone, cart, totalAmount)=>{
+    
     return{
         client: {
             name: name,
