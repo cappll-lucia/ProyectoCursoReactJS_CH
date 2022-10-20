@@ -5,12 +5,14 @@ import { Shop } from '../../context/ShopProvider';
 
 const CartWidget = () => {
 
-  const {cart}=useContext(Shop);
+  const {getItemsQty}=useContext(Shop);
+
+  let cant = getItemsQty();
 
   return (
     <div className='cartIcon'>
         <BsFillCartFill/> 
-        <span className='quantity'> | {cart.length} items</span>
+        <span className='quantity'> | {cant} items</span>
     </div>
   )
 }

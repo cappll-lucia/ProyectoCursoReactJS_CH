@@ -43,9 +43,16 @@ const ShopProvider = ({children}) => {
         return getTotal;
     }
     
+    const getItemsQty=()=>{
+        let cant=0;
+        cart.forEach(item => {
+            cant+=item.quantity;
+        });
+        return cant;
+    }
 
     return (
-        <Shop.Provider value={{cart, addItem, removeItem, clearCart, getTotal, client, setClient}}>
+        <Shop.Provider value={{cart, addItem, removeItem, clearCart, getTotal, client, setClient,getItemsQty}}>
             {children}
         </Shop.Provider>
     )
