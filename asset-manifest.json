@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/opticaCriado_ReactJS/static/css/main.6a786fde.css",
+    "main.js": "/opticaCriado_ReactJS/static/js/main.172eb89b.js",
+    "static/media/logotipoOptica.png": "/opticaCriado_ReactJS/static/media/logotipoOptica.ea917f28560f71102c1e.png",
+    "index.html": "/opticaCriado_ReactJS/index.html",
+    "main.6a786fde.css.map": "/opticaCriado_ReactJS/static/css/main.6a786fde.css.map",
+    "main.172eb89b.js.map": "/opticaCriado_ReactJS/static/js/main.172eb89b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6a786fde.css",
+    "static/js/main.172eb89b.js"
+  ]
+}
