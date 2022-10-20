@@ -11,7 +11,7 @@ const NavBar = ({categories}) => {
   return (
     <>
   <div className="topHeader" id="myTopHeader">
-    <Link to='/'><img src={logoImage}/></Link>
+    <Link to='/'><img alt="logo" src={logoImage}/></Link>
     <Link to='/cart'><CartWidget/></Link>
   </div>
 

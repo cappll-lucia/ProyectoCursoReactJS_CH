@@ -26,9 +26,9 @@ const Order = () => {
   }
 
   const handleCancelOrder=()=>{
+    toast("Orden cancelada");
     clearCart();
     setClient(null);
-    toast("Orden cancelada");
     navigate('/');
   }
 
@@ -88,7 +88,7 @@ const Order = () => {
         <span>Telefono: {client.phone }</span>
         <span style={{'backgroundColor':'#77c259e3', 'fontSize':'20px'}}>Importe final orden: $ {Total}</span>
         {
-          orderID==0 
+          orderID===0 
           ?
           <div className="actionPanelOrder">
             <button onClick={handleConfirmOrder} className='btnConfirmOrder'>Confirmar Orden</button>
