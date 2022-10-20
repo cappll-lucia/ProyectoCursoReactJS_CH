@@ -1,8 +1,17 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import {Shop} from '../../context/ShopProvider';
 
-const Order = ({client}) => {
+const Order = () => {
+
+
+  const {cart, removeItem, clearCart, getTotal} =useContext(Shop);
+
   return (
-    <div>Order</div>
+    <div className='Order'>
+      <div className="ClientInfo">
+        <span>Cliente: </span>
+      </div>
+    </div>
   )
 }
 

@@ -18,18 +18,26 @@ const ClientForm = ({save}) => {
     let email="";
     let confEmail="";
 
-    const onLostFocusEmai=()=>{
+    const onBlurEmai=()=>{
         email=watch('email');
     }
-    const onLostFocusConfirmEmai=()=>{
+    const onBlurConfirmEmai=()=>{
         email=watch('reqEmail');
     }
 
 
     const onSubmit = (datos)=>{
-        console.log(datos);
-        let actualClient = new Client(datos.name, datos.surname, datos.email, datos.phone);
-        save(actualClient);
+        // let actualClient = new Client(datos.name, datos.surname, datos.email, datos.phone);
+        // save({...actualClient});
+
+        let actualClient ={
+            name:datos.name,
+            surname:datos.surname,
+            email:datos.email,
+            phone:datos.phone,
+        };
+                console.log(actualClient);
+        save(true);
     }
 
 
@@ -65,7 +73,7 @@ return (
             </div>
             <div className='ClientFormField'>
                 <label className='ClientFormLabel'>Email</label>
-                <input className='ClientFormInput' type="text" OnLostFocus={onLostFocusEmai} name='email' ref="inputEmail" {...register('email', {
+                <input className='ClientFormInput' type="text" onBlur={onBlurEmai} name='email' ref="inputEmail" {...register('email', {
                     pattern: /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i,
                     required:true
                 })}/>
@@ -74,7 +82,7 @@ return (
             </div>
             <div className='ClientFormField'>
                 <label className='ClientFormLabel'>Confirmar Email</label>
-                <input className='ClientFormInput' OnLostFocus={onLostFocusConfirmEmai} type="text" {...register('reqEmail',{
+                <input className='ClientFormInput' onBlur={onBlurConfirmEmai} type="text" {...register('reqEmail',{
                     required: true,
                     validate: ()=>{return confEmail==email}
                 })}/>

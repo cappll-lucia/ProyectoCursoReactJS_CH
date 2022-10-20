@@ -5,17 +5,16 @@ import { Shop } from '../../context/ShopProvider';
 
 const CheckoutContainer = () => {
 
-    const [client, setClient]=useState({});
-    
+    const [clientLoad, setClientLoad]=useState(false);
 
   return (
     <div>
         {
-        client==={}
+        !clientLoad
         ?
-        <ClientForm save={setClient}/>
+        <ClientForm save={setClientLoad}/>
         :
-        <Order client={client}/>
+        <Order/>
     }
         </div>
   )
